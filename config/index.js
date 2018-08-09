@@ -2,6 +2,11 @@ const config = {
   projectName: 'taroApp',
   date: '2018-8-9',
   designWidth: 750,
+  deviceRatio: {
+    '640': 2.34 / 2,
+    '750': 1,
+    '828': 1.81 / 2
+  },
   sourceRoot: 'src',
   outputRoot: 'dist',
   plugins: {
@@ -47,8 +52,24 @@ const config = {
   },
   defineConstants: {
   },
+  copy: {
+     patterns: [
+    ],
+    options: {
+    }
+  },
   weapp: {
-
+    module: {
+      postcss: {
+        autoprefixer: {
+          enable: true
+        },
+        url: {
+          enable: true,
+          limit: 10240
+        }
+      }
+    }
   },
   h5: {
     publicPath: '/',

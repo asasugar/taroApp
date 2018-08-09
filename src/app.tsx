@@ -1,14 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
-import '@tarojs/async-await'
-import { Provider } from '@tarojs/redux'
-
 import Index from './pages/index'
 
-import configStore from './store'
-
 import './app.scss'
-
-const store = configStore()
 
 class App extends Component {
   config = {
@@ -33,9 +26,7 @@ class App extends Component {
 
   render () {
     return (
-      <Provider store={store}>
-        <Index />
-      </Provider>
+      <Index />
     )
   }
 }
